@@ -29,4 +29,11 @@ class JobApplicationsController < ApplicationController
             render :new
         end
     end
+
+    private
+
+    def job_application_params
+        params.require(:job_application).permit(:status, :user_id, :job_id)
+    end
+
 end
