@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root "home#index"
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
   resources :bookmarks
   resources :filters
   resources :job_applications
