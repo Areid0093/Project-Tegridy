@@ -5,7 +5,7 @@ class FiltersController < ApplicationController
     end
 
     def show
-        @filter = filter.find(params[:id])
+        @filter = Filter.find(params[:id])
     end
 
 end
