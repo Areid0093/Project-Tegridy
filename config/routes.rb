@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  root "home#index"
   resources :bookmarks
-  resources :categories
+  resources :filters
   resources :job_applications
   resources :job_postings
   resources :users
