@@ -4,7 +4,7 @@ class CreateJobPostings < ActiveRecord::Migration[6.0]
       t.string :company
       t.string :position
       t.string :city
-      t.string :description
+      t.text :description
 
       t.timestamps
     end
