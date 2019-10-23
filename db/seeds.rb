@@ -40,13 +40,13 @@ end
 end
 
 
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 1)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 2)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 3)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 4)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 5)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 6)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 7)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 8)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 9)
-JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 10)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 1)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 2)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 3)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 4)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 5)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 6)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 7)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 8)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 9)
+# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 10)

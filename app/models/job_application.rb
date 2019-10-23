@@ -3,10 +3,10 @@ class JobApplication < ApplicationRecord
   belongs_to :job_posting
   # validates :description, length: {minimum: 25}
 
-  @@STATUS = ["started", "completed", "submitted"]
+  # @@STATUS = ["started", "completed", "submitted"]
 
-  def self.status 
-    @@STATUS
-  end
+  # def self.status 
+  #   @@STATUS
+  # end
   
 end
