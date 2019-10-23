@@ -1,4 +1,11 @@
 <h1> Job Postings </h1>
 
-<%= render 'form' %>
+<% @job_postings.each do |f| %>
+    Company: <%= f.company %><br><br>
+    Position: <%= f.position %><br><br>
+    City: <%= f.city %><br><br>
+    Description: <%= f.description %><br><br>
+    <%= link_to 'Learn More', job_posting_path(f)%><br><br>
+<% end %>
+
 

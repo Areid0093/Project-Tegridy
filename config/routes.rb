@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :bookmarks
   resources :filters
   resources :job_applications
-  resources :job_postings
+  resources :job_postings, only: [:index, :show]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   get "signup", to: "users#new", as: "signup"
