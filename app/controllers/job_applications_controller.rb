@@ -19,7 +19,7 @@ class JobApplicationsController < ApplicationController
     def create 
         @job_application = JobApplication.new(job_application_params)
         if @job_application.save
-            redirect_to @job_applications
+            redirect_to job_application_path(@job_application)
         else
             render :new
         end
@@ -30,11 +30,9 @@ class JobApplicationsController < ApplicationController
         if @job_application.update(job_application_params)
             redirect_to job_application_path(@job_application)
         else
-            render :new
+            render :edit
         end
     end
-
-
 
     private
 
