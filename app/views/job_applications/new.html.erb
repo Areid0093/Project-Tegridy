@@ -1,14 +1,11 @@
 <%= form_for @job_application do |f| %>
-    
-
   <div class="field">
     <%= f.label :description %>
     <%= f.text_field :description %>
-  </div>
-  <%= f.collection_select :user_id, User.all, :id, :name %>
+ <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.collection_select :job_posting_id, JobPosting.all, :id, :company %>
-  <%= f.label :Status %>
-    <%= f.text_field :status %>
+
+</div>
 
   <div class="actions">
     <%= f.submit %>
