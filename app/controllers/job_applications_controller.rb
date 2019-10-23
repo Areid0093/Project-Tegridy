@@ -1,13 +1,13 @@
 class JobApplicationsController < ApplicationController
 
+   
+
     def show
         @job_application = JobApplication.find(params[:id])
     end
-
     def index 
-        @job_applications = JobApplication.all 
+        @job_applications = JobApplication.all
     end
-
     def new 
         @job_application = JobApplication.new
     end
@@ -25,14 +25,15 @@ class JobApplicationsController < ApplicationController
         end
     end
 
-    def create 
-        @job_application = JobApplication.new(job_application_params)
-        if @job_application.save
-            redirect_to job_application_path(@job_application)
-        else
-            render :edit
-        end
-    end
+    # def create 
+    #     @job_application = JobApplication.new(job_application_params)
+    #     if @job_application.valid?
+    #         @job_application.save
+    #         redirect_to application_path(@job_application)
+    #     else
+        #     render :edit
+        # end
+    # end
 
 
     private
