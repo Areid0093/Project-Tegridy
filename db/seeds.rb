@@ -35,8 +35,8 @@ end
 
 10.times do 
     Filter.create(
-        industry: Faker::Company.industry
-    )
+        industry: Faker::Company.industry,
+        position: Faker::Job.title)
 end
 
 

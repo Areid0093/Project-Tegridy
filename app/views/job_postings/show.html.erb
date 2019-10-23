@@ -6,13 +6,13 @@
 
 
 <% if !current_user %>
-    <%= form_with(@job_posting.users.build, url: user_path(@user), authenticity_token: false) do |f| %>
+    <%= form_for @job_posting.users.build do |f| %>
     <%= f.submit "Bookmark!" %>
   <% end %>
 <% else %>
-    <%= form_with(@job_posting.users.build, url: user_path(@user), authenticity_token: false) do |f| %>
+    <%= form_for @job_posting.users.build do |f| %>
     <% f.hidden_field :user_id, value: current_user.id %>
-    <% if @job_postings.users.include? current_user %>
+    <% if @job_posting.users.include? current_user %>
      <%= f.submit "WOO!!"%>
      <% else %>
         <%= f.submit "Bookmark!" %>

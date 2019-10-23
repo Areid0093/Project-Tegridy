@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :job_posting_filters
   root "home#index"
   resources :bookmarks
   resources :filters
