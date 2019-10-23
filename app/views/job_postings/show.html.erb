@@ -4,5 +4,18 @@
 <%= link_to 'Apply Now', new_job_application_url%>
 
 
-
-
+<% if !current_user %>
+    <%= form_for @job_posting.users.build do |f| %>
+    <%= f.submit "Bookmark!" %>
+  <% end %>
+<% else %>
+    <%= form_for @job_posting.users.build do |f| %>
+    <% f.hidden_field :user_id, value: current_user.id %>
+    <% if @job_posting.users.include? current_user %>
+     <%= f.submit "WOO!!"%>
+     <% else %>
+        <%= f.submit "Bookmark!" %>
+     <% end %>
+    <% end %>
+<% end %>
+<br>

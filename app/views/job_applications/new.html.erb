@@ -3,7 +3,7 @@
     <%= f.label :description %>
     <%= f.text_field :description %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.collection_select :job_posting_id, JobPosting.all, :id, :company %>
+    <%= f.collection_select :job_posting_id, JobPosting.all, :id, :company %>
 
 </div>
 

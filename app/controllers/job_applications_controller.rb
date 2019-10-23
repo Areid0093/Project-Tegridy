@@ -3,10 +3,12 @@ class JobApplicationsController < ApplicationController
     def show
         @job_application = JobApplication.find(params[:id])
     end
+    
     def index 
         @job_applications = JobApplication.where("user_id = ?", session[:user_id])
         @user = session[:user_id]
     end
+
     def new 
         @job_application = JobApplication.new
     end
@@ -16,15 +18,15 @@ class JobApplicationsController < ApplicationController
     end
 
 
-        def create
-            job_posting_id = job_application_params(:job_posting_id)[:job_posting_id]
-            @job_application = JobApplication.create(
-              status: "started", 
-              user_id: session[:user_id], 
-              job_posting_id: job_posting_id,
-              description: params[:job_application][:description])
+    def create
+        job_posting_id = job_application_params(:job_posting_id)[:job_posting_id]
+        @job_application = JobApplication.create(
+            status: "started", 
+            user_id: session[:user_id], 
+            job_posting_id: job_posting_id,
+            description: params[:job_application][:description])
             redirect_to job_applications_path
-          end
+    end
 
 
     def update
