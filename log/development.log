@@ -1,0 +1,581 @@
+Started GET "/" for ::1 at 2019-10-23 10:20:12 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 461)
+Completed 200 OK in 2073ms (Views: 2054.4ms | ActiveRecord: 0.0ms | Allocations: 1368595)
+
+
+Started GET "/login" for ::1 at 2019-10-23 10:20:21 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 596)
+Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 12177)
+
+
+Started GET "/users/new" for ::1 at 2019-10-23 10:20:23 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 292.1ms | Allocations: 178017)
+  Rendered users/new.html.erb within layouts/application (Duration: 294.0ms | Allocations: 178373)
+Completed 200 OK in 346ms (Views: 316.0ms | ActiveRecord: 1.0ms | Allocations: 197771)
+
+
+Started GET "/login" for ::1 at 2019-10-23 10:20:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 323)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 11326)
+
+
+Started GET "/users/new" for ::1 at 2019-10-23 10:20:26 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 896)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 993)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.0ms | Allocations: 12027)
+
+
+Started POST "/users" for ::1 at 2019-10-23 10:20:33 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"hhPhCEzs43cBxpdDWdEm3yyaJk9yhrpII2tF8iZTSnyMAFkqndsWZI32hEmSxeZxIRwZIeLOR25TUleb4K7RxQ==", "user"=>{"username"=>"Alec93", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Alec93"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.7ms | Allocations: 1053)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1149)
+Completed 200 OK in 370ms (Views: 32.3ms | ActiveRecord: 0.6ms | Allocations: 15937)
+
+
+Started GET "/login" for ::1 at 2019-10-23 10:20:36 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 313)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 11305)
+
+
+Started POST "/sessions" for ::1 at 2019-10-23 10:20:42 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WU0b8EVA+ta/yk9RYf1Fi0STQt62RofiV5BBYEl98gRO+QpIPTJipX3BtmNI7NJTB6pWp3UOFEhtqawkgFHFHw==", "username"=>"Ale93", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Ale93"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 300)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.2ms | Allocations: 12046)
+
+
+Started POST "/sessions" for ::1 at 2019-10-23 10:20:47 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zkydLD2ta4RAT/JsVdXBE3maTX5+pGLRJin3hbhfiTM3iWKeihQz7wqDWR7DyWTPRghC4jj/X9BOnyXfHZzw8A==", "username"=>"Alec123", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Alec123"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 300)
+Completed 200 OK in 348ms (Views: 26.2ms | ActiveRecord: 0.3ms | Allocations: 11888)
+
+
+Started GET "/" for ::1 at 2019-10-23 10:20:56 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 94)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 11092)
+
+
+Started GET "/signup" for ::1 at 2019-10-23 10:20:58 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.3ms | Allocations: 896)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 992)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.0ms | Allocations: 12015)
+
+
+Started POST "/users" for ::1 at 2019-10-23 10:21:07 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"zA4HQltzLHXYh/kaDpXLZHqxLK5JRwGquP8bE+6l3NvGHb9gikTZZlS36hDFgQvKdzcTwNkP/IzIxgl6KFhHYg==", "user"=>{"username"=>"Alec90", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Alec90"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Alec90"], ["password_digest", "$2a$12$925i3dufmxPXLiiiR3Q.YePoHFN2TQBcjUdlz7Y5sOt2PFxsj.LJ2"], ["created_at", "2019-10-23 15:21:08.007399"], ["updated_at", "2019-10-23 15:21:08.007399"]]
+  ↳ app/controllers/users_controller.rb:26:in `create'
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `create'
+Redirected to http://localhost:3001/users/13
+Completed 302 Found in 338ms (ActiveRecord: 5.5ms | Allocations: 3774)
+
+
+Started GET "/users/13" for ::1 at 2019-10-23 10:21:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 321)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 0.3ms | Allocations: 12087)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-23 10:21:10 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.5ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 5727)
+Completed 200 OK in 42ms (Views: 35.3ms | ActiveRecord: 1.3ms | Allocations: 19028)
+
+
+Started GET "/job_postings/1" for ::1 at 2019-10-23 10:21:15 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobPosting Load (0.4ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:8:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1454)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 2635)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"job_applications", :id=>nil}, missing required keys: [:id]):
+    1: <h2> <%= @job_posting.position%> at <%= @job_posting.company %> </h2>
+    2: <h4>  City: <%= @job_posting.city %> </h4>
+    3: <h4>  Description: <%= @job_posting.description%> </h4> <br>
+    4: <%= link_to 'Apply Now', job_application_path(@job_application)%>
+  
+app/views/job_postings/show.html.erb:4
+Started GET "/job_postings" for ::1 at 2019-10-23 10:21:19 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1121)
+Completed 200 OK in 75ms (Views: 72.1ms | ActiveRecord: 0.3ms | Allocations: 12185)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20191021182411)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password_digest" varchar, "city" varchar, "job_title" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021182411"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJobPostings (20191021182803)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "job_postings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "company" varchar, "position" varchar, "city" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021182803"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJobApplications (20191021183000)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "status" varchar, "description" text, "user_id" integer, "job_posting_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021183000"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFilters (20191021183133)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "filters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "industry" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021183133"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBookmarks (20191021183206)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "job_posting_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021183206"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-23 15:30:11.430258"], ["updated_at", "2019-10-23 15:30:11.430258"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  [1m[36mFilter Load (0.2ms)[0m  [1m[34mSELECT "filters".* FROM "filters"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "vickyhermann123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Vicky Hermann"], ["username", "vickyhermann123"], ["password_digest", "$2a$12$8zmHojScSNmvhKGLELNsV.AQusHRP2.WQOij1kJ06j3kVWNlUXda6"], ["city", "Lake Clotildefurt"], ["job_title", "Retail Architect"], ["created_at", "2019-10-23 15:30:20.621506"], ["updated_at", "2019-10-23 15:30:20.621506"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mrs.coraleehane123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mrs. Coralee Hane"], ["username", "mrs.coraleehane123"], ["password_digest", "$2a$12$67sCEc0Qns71DqNCzI1xb.sfBrhHqRxeIgIF9dp87uyZ1IsrRULa."], ["city", "South Rolf"], ["job_title", "IT Coordinator"], ["created_at", "2019-10-23 15:30:20.930535"], ["updated_at", "2019-10-23 15:30:20.930535"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "hellenbruen123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hellen Bruen"], ["username", "hellenbruen123"], ["password_digest", "$2a$12$pk9DnjtP0cq8EN9TTzbXtep03JEzuio6..9vw9VYQESCApd2Et9AK"], ["city", "Beattyview"], ["job_title", "Product Retail Specialist"], ["created_at", "2019-10-23 15:30:21.238942"], ["updated_at", "2019-10-23 15:30:21.238942"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "missidelllemke123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Miss Idell Lemke"], ["username", "missidelllemke123"], ["password_digest", "$2a$12$QJcYIUy0HiUlq490gKn.dO/gpsn.RjawrBP.ZcE301YyUzepxfqcW"], ["city", "D'Amoreburgh"], ["job_title", "Banking Consultant"], ["created_at", "2019-10-23 15:30:21.547551"], ["updated_at", "2019-10-23 15:30:21.547551"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cleowildermanmd123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cleo Wilderman MD"], ["username", "cleowildermanmd123"], ["password_digest", "$2a$12$OWMO6fKUnvGL7L6FD38vce0nE8yiSx43Ey.ue1U2ujQAHeHeE8gMO"], ["city", "New Timothyport"], ["job_title", "IT Coordinator"], ["created_at", "2019-10-23 15:30:21.856127"], ["updated_at", "2019-10-23 15:30:21.856127"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "alixraynor123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Alix Raynor"], ["username", "alixraynor123"], ["password_digest", "$2a$12$rvoSWsxrabHpx1noojWN7O.A54IVZVs62T.VhyumUiElQs4z5Tu8e"], ["city", "Mooreview"], ["job_title", "Human Technician"], ["created_at", "2019-10-23 15:30:22.164684"], ["updated_at", "2019-10-23 15:30:22.164684"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dotdibbert123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dot Dibbert"], ["username", "dotdibbert123"], ["password_digest", "$2a$12$cguztzQEXyaOpO7eqd10n.Ey.JuowmjzCOFgj7B8hHkkF2eRp9Or."], ["city", "Hagenesberg"], ["job_title", "Chief Mining Officer"], ["created_at", "2019-10-23 15:30:22.473302"], ["updated_at", "2019-10-23 15:30:22.473302"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shaundadooley123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shaunda Dooley"], ["username", "shaundadooley123"], ["password_digest", "$2a$12$GR6vI3QAEPuLVEWOrRIw/.KtKgQJ18fZ88vzpUyUAB0T0c7K32fgq"], ["city", "Kendatown"], ["job_title", "Customer Technician"], ["created_at", "2019-10-23 15:30:22.782466"], ["updated_at", "2019-10-23 15:30:22.782466"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "raymondvolkmanmd123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Raymond Volkman MD"], ["username", "raymondvolkmanmd123"], ["password_digest", "$2a$12$9BPyG4TlzTcCO4UOiGI1O.6pSYL/KfHOBalx.X0Y7XERWiSqLhL9i"], ["city", "Pollichland"], ["job_title", "Marketing Planner"], ["created_at", "2019-10-23 15:30:23.092979"], ["updated_at", "2019-10-23 15:30:23.092979"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "donnylarkin123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Donny Larkin"], ["username", "donnylarkin123"], ["password_digest", "$2a$12$1KEcoqkL7Z4ql0OgjFHPTu4b75J0XOQFPc1Uj.HhSgd2llSUtwyCK"], ["city", "Gorczanyport"], ["job_title", "Customer Community-Services Supervisor"], ["created_at", "2019-10-23 15:30:23.401290"], ["updated_at", "2019-10-23 15:30:23.401290"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.6ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Breitenberg-Bailey"], ["position", "IT Designer"], ["city", "Hegmanntown"], ["description", "disintermediate user-centric architectures"], ["created_at", "2019-10-23 15:30:23.412722"], ["updated_at", "2019-10-23 15:30:23.412722"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Boyle, Leuschke and Roberts"], ["position", "Legacy Sales Developer"], ["city", "New Lashandra"], ["description", "implement sticky metrics"], ["created_at", "2019-10-23 15:30:23.420904"], ["updated_at", "2019-10-23 15:30:23.420904"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.5ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Friesen, Christiansen and Jaskolski"], ["position", "Senior Hospitality Planner"], ["city", "Melindamouth"], ["description", "extend mission-critical action-items"], ["created_at", "2019-10-23 15:30:23.427560"], ["updated_at", "2019-10-23 15:30:23.427560"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Bergstrom, Bergnaum and Schneider"], ["position", "Principal Administrator"], ["city", "Keelingburgh"], ["description", "enhance customized interfaces"], ["created_at", "2019-10-23 15:30:23.448588"], ["updated_at", "2019-10-23 15:30:23.448588"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Lynch, Dach and Corwin"], ["position", "Healthcare Technician"], ["city", "West Lucillechester"], ["description", "target proactive experiences"], ["created_at", "2019-10-23 15:30:23.455280"], ["updated_at", "2019-10-23 15:30:23.455280"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Erdman-Jacobs"], ["position", "Corporate Architect"], ["city", "Marquitatown"], ["description", "incubate end-to-end portals"], ["created_at", "2019-10-23 15:30:23.464206"], ["updated_at", "2019-10-23 15:30:23.464206"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Stark-Runte"], ["position", "Human Education Officer"], ["city", "Deckowbury"], ["description", "benchmark viral convergence"], ["created_at", "2019-10-23 15:30:23.470750"], ["updated_at", "2019-10-23 15:30:23.470750"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Labadie-Kub"], ["position", "Lead Administration Consultant"], ["city", "New Marita"], ["description", "grow virtual mindshare"], ["created_at", "2019-10-23 15:30:23.477567"], ["updated_at", "2019-10-23 15:30:23.477567"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Kunze-Barrows"], ["position", "Hospitality Administrator"], ["city", "East Karren"], ["description", "unleash transparent action-items"], ["created_at", "2019-10-23 15:30:23.483993"], ["updated_at", "2019-10-23 15:30:23.483993"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Flatley and Sons"], ["position", "Regional Architect"], ["city", "Veumbury"], ["description", "seize front-end action-items"], ["created_at", "2019-10-23 15:30:23.490787"], ["updated_at", "2019-10-23 15:30:23.490787"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.4ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Higher Education"], ["created_at", "2019-10-23 15:30:23.500622"], ["updated_at", "2019-10-23 15:30:23.500622"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.4ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Public Relations and Communications"], ["created_at", "2019-10-23 15:30:23.506922"], ["updated_at", "2019-10-23 15:30:23.506922"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.6ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Wireless"], ["created_at", "2019-10-23 15:30:23.512897"], ["updated_at", "2019-10-23 15:30:23.512897"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.6ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Online Media"], ["created_at", "2019-10-23 15:30:23.520264"], ["updated_at", "2019-10-23 15:30:23.520264"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.6ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Market Research"], ["created_at", "2019-10-23 15:30:23.528491"], ["updated_at", "2019-10-23 15:30:23.528491"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.6ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Mechanical or Industrial Engineering"], ["created_at", "2019-10-23 15:30:23.537425"], ["updated_at", "2019-10-23 15:30:23.537425"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (1.4ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Information Services"], ["created_at", "2019-10-23 15:30:23.550690"], ["updated_at", "2019-10-23 15:30:23.550690"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.5ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Textiles"], ["created_at", "2019-10-23 15:30:23.582100"], ["updated_at", "2019-10-23 15:30:23.582100"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.4ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Transportationg / Trucking / Railroad"], ["created_at", "2019-10-23 15:30:23.588633"], ["updated_at", "2019-10-23 15:30:23.588633"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFilter Create (0.4ms)[0m  [1m[32mINSERT INTO "filters" ("industry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["industry", "Wireless"], ["created_at", "2019-10-23 15:30:23.594568"], ["updated_at", "2019-10-23 15:30:23.594568"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.8ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "engineer customized web-readiness"], ["user_id", 1], ["job_posting_id", 1], ["created_at", "2019-10-23 15:30:23.617444"], ["updated_at", "2019-10-23 15:30:23.617444"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "mesh seamless bandwidth"], ["user_id", 2], ["job_posting_id", 2], ["created_at", "2019-10-23 15:30:23.632308"], ["updated_at", "2019-10-23 15:30:23.632308"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.1ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.7ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "target back-end web services"], ["user_id", 3], ["job_posting_id", 3], ["created_at", "2019-10-23 15:30:23.646266"], ["updated_at", "2019-10-23 15:30:23.646266"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.1ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "synthesize ubiquitous methodologies"], ["user_id", 4], ["job_posting_id", 4], ["created_at", "2019-10-23 15:30:23.660721"], ["updated_at", "2019-10-23 15:30:23.660721"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.1ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "enhance user-centric technologies"], ["user_id", 5], ["job_posting_id", 5], ["created_at", "2019-10-23 15:30:23.676601"], ["updated_at", "2019-10-23 15:30:23.676601"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "harness visionary vortals"], ["user_id", 6], ["job_posting_id", 6], ["created_at", "2019-10-23 15:30:23.695390"], ["updated_at", "2019-10-23 15:30:23.695390"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.1ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "streamline plug-and-play e-tailers"], ["user_id", 7], ["job_posting_id", 7], ["created_at", "2019-10-23 15:30:23.711311"], ["updated_at", "2019-10-23 15:30:23.711311"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.1ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "leverage virtual deliverables"], ["user_id", 8], ["job_posting_id", 8], ["created_at", "2019-10-23 15:30:23.726982"], ["updated_at", "2019-10-23 15:30:23.726982"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.1ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "embrace visionary experiences"], ["user_id", 9], ["job_posting_id", 9], ["created_at", "2019-10-23 15:30:23.742555"], ["updated_at", "2019-10-23 15:30:23.742555"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mJobPosting Load (0.1ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mJobApplication Create (0.6ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "open"], ["description", "unleash seamless functionalities"], ["user_id", 10], ["job_posting_id", 10], ["created_at", "2019-10-23 15:30:23.758357"], ["updated_at", "2019-10-23 15:30:23.758357"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mJobApplication Load (0.4ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/job_postings" for ::1 at 2019-10-23 10:31:03 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 17.6ms | Allocations: 6249)
+Completed 200 OK in 1824ms (Views: 1806.7ms | ActiveRecord: 1.2ms | Allocations: 1372223)
+
+
+Started GET "/job_postings/1" for ::1 at 2019-10-23 10:31:08 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobPosting Load (2.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:8:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1462)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.2ms | Allocations: 2968)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"job_applications", :id=>nil}, missing required keys: [:id]):
+    1: <h2> <%= @job_posting.position%> at <%= @job_posting.company %> </h2>
+    2: <h4>  City: <%= @job_posting.city %> </h4>
+    3: <h4>  Description: <%= @job_posting.description%> </h4> <br>
+    4: <%= link_to 'Apply Now', job_application_path(@job_application)%>
+  
+app/views/job_postings/show.html.erb:4
+Started GET "/job_postings" for ::1 at 2019-10-23 10:32:23 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.5ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1123)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.5ms | Allocations: 12186)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-23 10:32:41 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1305)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.2ms | Allocations: 13708)
+
+
+Started GET "/job_postings/1" for ::1 at 2019-10-23 10:32:43 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:8:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 246)
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 0.3ms | Allocations: 11930)
+
+
+Started GET "/job_applications/1" for ::1 at 2019-10-23 10:32:44 -0500
+Processing by JobApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:6:in `show'
+  Rendering job_applications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/show.html.erb:3
+  Rendered job_applications/show.html.erb within layouts/application (Duration: 32.6ms | Allocations: 9603)
+Completed 200 OK in 84ms (Views: 61.3ms | ActiveRecord: 1.9ms | Allocations: 27108)
+
+
+Started GET "/job_postings/2" for ::1 at 2019-10-23 10:32:54 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJobPosting Load (0.5ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:8:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 91)
+Completed 200 OK in 39ms (Views: 31.8ms | ActiveRecord: 0.5ms | Allocations: 11607)
+
+
+Started GET "/job_applications/2" for ::1 at 2019-10-23 10:32:55 -0500
+Processing by JobApplicationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJobApplication Load (0.5ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:6:in `show'
+  Rendering job_applications/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_applications/show.html.erb:3
+  Rendered job_applications/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 735)
+Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 1.5ms | Allocations: 12239)
+
+
+Started GET "/job_postings/1" for ::1 at 2019-10-23 10:33:03 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobPosting Load (1.5ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:8:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 86)
+Completed 200 OK in 70ms (Views: 64.9ms | ActiveRecord: 1.5ms | Allocations: 11603)
+
+
+Started GET "/job_applications/1" for ::1 at 2019-10-23 10:33:05 -0500
+Processing by JobApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobApplication Load (3.5ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:6:in `show'
+  Rendering job_applications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/show.html.erb:3
+  Rendered job_applications/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 737)
+Completed 200 OK in 37ms (Views: 28.7ms | ActiveRecord: 4.1ms | Allocations: 12240)
+
+
+Started GET "/job_applications/1" for ::1 at 2019-10-23 10:33:13 -0500
+Processing by JobApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobApplication Load (0.4ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:6:in `show'
+  Rendering job_applications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/show.html.erb:3
+  Rendered job_applications/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 736)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 0.8ms | Allocations: 12247)
+
+
+Started GET "/job_applications/1" for ::1 at 2019-10-23 10:34:04 -0500
+Processing by JobApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:6:in `show'
+  Rendering job_applications/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/show.html.erb:3
+  Rendered job_applications/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 852)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 0.4ms | Allocations: 13178)
+
+
+Started GET "/job_postings/1" for ::1 at 2019-10-23 10:34:06 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJobPosting Load (0.4ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:8:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 242)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.4ms | Allocations: 12202)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-23 10:34:07 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1298)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.3ms | Allocations: 12338)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-23 10:34:27 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1297)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.3ms | Allocations: 10425)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-23 10:34:28 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1100)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.2ms | Allocations: 9317)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-23 10:34:28 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1095)
+Completed 200 OK in 57ms (Views: 55.7ms | ActiveRecord: 0.3ms | Allocations: 9321)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-23 10:34:28 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1095)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.3ms | Allocations: 9312)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-23 10:34:28 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1095)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.3ms | Allocations: 9312)
+
+
+Started GET "/users/13" for ::1 at 2019-10-23 10:34:29 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1112)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=13):
+  
+app/controllers/users_controller.rb:4:in `show'
+Started GET "/job_postings" for ::1 at 2019-10-23 10:34:31 -0500
+Processing by JobPostingsController#index as HTML
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:3
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1094)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.3ms | Allocations: 9315)
+
+
+Started GET "/" for ::1 at 2019-10-23 10:34:38 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 318)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.0ms | Allocations: 9065)
+
+
