@@ -1,4 +1,7 @@
-Your Applications:
+Your Applications<br>
 <% @job_applications.each do |job_application| %>
-Description: <%= job_application.description%>
-<% end %>
+Description: <%= job_application.description%><br>
+Company: <%= job_application.job_posting.company%><br>
+Position: <%= job_application.job_posting.position%><br>
+<%end%>
+

@@ -1,13 +1,13 @@
 class JobApplicationsController < ApplicationController
 
+   
+
     def show
         @job_application = JobApplication.find(params[:id])
     end
-
     def index 
-        @job_applications = JobApplication.all 
+        @job_applications = JobApplication.all
     end
-
     def new 
         @job_application = JobApplication.new
     end
