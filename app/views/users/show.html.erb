@@ -5,6 +5,12 @@
   <%= @user.username %>
 </p>
 
+
+<% @user.job_postings.each do |p| %>
+  <h4><%= link_to "#{p.name}", bookmark_path(p)%></h4>
+<% end %>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', root_url %> |
 <%= link_to 'Job Postings', job_postings_url%>

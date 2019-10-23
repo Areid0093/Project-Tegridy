@@ -8,5 +8,4 @@ class JobPostingsController < ApplicationController
         @job_posting = JobPosting.find(params[:id])
     end
 
-
 end

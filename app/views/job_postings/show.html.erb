@@ -1,4 +1,22 @@
 <h2> <%= @job_posting.position%> at <%= @job_posting.company %> </h2>
 <h4>  City: <%= @job_posting.city %> </h4>
 <h4>  Description: <%= @job_posting.description%> </h4> <br>
-<%= link_to 'Apply Now', job_application_path%>
+<%= link_to 'Apply Now', new_job_application_url%>
+<br>
+
+
+<% if !current_user %>
+    <%= form_with(@job_posting.users.build, url: user_path(@user), authenticity_token: false) do |f| %>
+    <%= f.submit "Bookmark!" %>
+  <% end %>
+<% else %>
+    <%= form_with(@job_posting.users.build, url: user_path(@user), authenticity_token: false) do |f| %>
+    <% f.hidden_field :user_id, value: current_user.id %>
+    <% if @job_postings.users.include? current_user %>
+     <%= f.submit "WOO!!"%>
+     <% else %>
+        <%= f.submit "Bookmark!" %>
+     <% end %>
+    <% end %>
+<% end %>
+<br>

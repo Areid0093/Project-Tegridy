@@ -7,63 +7,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <%= stylesheet_link_tag "application.css" %>
   </head>
 
   <body>
-    <p id="authenticity" style="display:none;"><%= form_authenticity_token %></p>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <% if current_user %>
-        <%= link_to 'Tegridy Jobs', user_path(logged_in_user), {class: "navbar-brand  m-1 mr-3", id: "brand"} %>
-      <% else %>
-        <%= link_to 'Tegridy Jobs', '/', {class: "navbar-brand  m-1 mr-3", id: "brand"} %>
-      <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <% if current_user %>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item m-2 opac">
-              <%= link_to 'My Dashboard', user_path(logged_in_user), class: "navbar-link text-light" %>
-            </li>
-            <li class="nav-item m-2 opac">
-              <%= link_to 'My Applications', applications_path(logged_in_user), class: "navbar-link text-light" %>
-            </li>
-            <li class="nav-item m-2 opac">
-              <%= link_to 'Job Feed', jobs_path, class: "navbar-link text-light" %>
-            </li>
-            <li class="nav-item m-2 opac">
-              <%= link_to 'Profile', edit_user_path(logged_in_user), class: "navbar-link text-light" %>
-            </li>
-          </ul>
-          <ul class="navbar-nav m-2">
-            <li class="nav-item">
-              <%= link_to 'Logout', logout_path,{method:"post", class: "navbar-link text-light"} %>
-            </li>
-          </ul>
-          <% else %>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item m-2">
-                <%= link_to 'Login', login_path, class: "navbar-link text-light" %>
-              </li>
-              <li class="nav-item m-2">
-                <%= link_to 'Signup', new_user_path, class: "navbar-link text-light" %>
-              </li>
-          </ul>
-          <% end %>
-      </div>
-    </nav>
-    <!--Display any flash messages on the top of any page-->
-    <% if flash.notice %>
-        <div class="alert alert-warning" role="alert">
-            <%= flash.notice %>
-        </div>
-    <% end %>
-    <div class="container">
-      <%= yield %>
-    </div>
-    
+    <%= yield %>
   </body>
 </html>
