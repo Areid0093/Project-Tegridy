@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @user.username %>
+  <strong>Welcome:</strong>
+  <%= @user.name %>
 </p>
 
 
@@ -13,6 +13,6 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', root_url %> |
-<%= link_to 'Job Postings', job_postings_url%>
-
-
+<%= link_to 'Job Postings', job_postings_url%> |
+<%= link_to 'View My Applications', job_applications_path(@job_applications) %>
+<%= link_to "Log Out", logout_path %>
