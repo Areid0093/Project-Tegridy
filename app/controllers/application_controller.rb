@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user
+    helper_method :company
    
 
   def current_user
@@ -9,7 +10,12 @@ class ApplicationController < ActionController::Base
       @current_user = nil
     end
     
+  end 
+
+  def company 
+    @company = JobPosting.find_by_company(params[:company])
   end
+  
 end
 
 

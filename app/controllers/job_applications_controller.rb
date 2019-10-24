@@ -1,16 +1,26 @@
 class JobApplicationsController < ApplicationController
-    before_action :find_job_application, only: [:show, :edit, :update, :destroy]
+    before_action :find_job_application, only: [:edit, :update, :destroy]
     def show
-        @job_application = JobApplication.find(params[:id])
+        @job_application = JobApplication.where("job_posting_id = ?", params[:job_posting_id])
+        @user = session[:id]
     end
     
     def index 
-        @job_applications = JobApplication.where("user_id = ?", session[:user_id])
-        @user = session[:user_id]
+        # if params[:job_posting_id]
+            @user = session[:user_id]
+            @job_applications = JobApplication.where("user_id = ?", session[:user_id])
+            # @job_applications = JobApplication.where("job_posting_id = ?", params[:job_posting_id])
+        # else
+        #     @job_applications = JobApplication.where("user_id = ?", session[:user_id])
+        #     @user = session[:user_id]
+        #     @job_applications.all
+        # end
     end
 
     def new 
         @job_application = JobApplication.new
+        @job_posting_id = params[:job_posting_id]
+        @user = session[:user_id] 
     end
     
     def edit
@@ -19,12 +29,13 @@ class JobApplicationsController < ApplicationController
 
 
     def create
-        job_posting_id = job_application_params(:job_posting_id)[:job_posting_id]
-        @job_application = JobApplication.create(
+        @job_posting_id = JobPosting.find(params[:job_posting_id])
+        # job_posting_id = job_application_params(:job_posting_id)[:job_posting_id]
+        @job_application = @job_posting_id.job_applications.create!(
             status: "started", 
             user_id: session[:user_id], 
-            job_posting_id: job_posting_id,
-            description: params[:job_application][:description])
+            # job_posting_id: job_posting_id,
+            description: params[:description])
             redirect_to job_applications_path
     end
 
@@ -51,8 +62,10 @@ class JobApplicationsController < ApplicationController
         end
       end
 
+      
+
     def job_application_params(*args)
-        params.require(:job_application).permit(:status, :user_id, :job_posting_id, :description)
+        params.require(:job_application).permit(:status, :user_id, :description)
     end
 
 end

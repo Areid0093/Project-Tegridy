@@ -33,11 +33,11 @@ end
         description: Faker::Company.bs) 
 end
 
-10.times do 
-    Filter.create(
-        industry: Faker::Company.industry,
-        position: Faker::Job.title)
-end
+# 10.times do 
+#     Filter.create(
+#         industry: Faker::Company.industry,
+#         position: Faker::Job.title)
+# end
 
 
 # JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 1)
