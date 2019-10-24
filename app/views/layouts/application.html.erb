@@ -4,12 +4,43 @@
     <title>Tegridy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
-  <body>
+  <body><p id="authenticity" style="display:none;"><%= form_authenticity_token %></p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <% if logged_in? %>
+        <%= link_to 'Tegridy', user_path(signed_in), {class: "navbar-brand  m-1 mr-3", id: "brand"} %>
+      <% else %>
+        <%= link_to 'Tegridy', '/', {class: "navbar-brand  m-1 mr-3", id: "brand"} %>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <% if logged_in? %>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item m-2 opac">
+              <%= link_to 'My Applications', job_applications_path(signed_in), class: "navbar-link text-light" %>
+            </li>
+            <li class="nav-item m-2 opac">
+              <%= link_to 'Job Postings', job_postings_path, class: "navbar-link text-light" %>
+            </li>
+            <li class="nav-item m-2 opac">
+              <%= link_to 'Profile', edit_user_path(signed_in), class: "navbar-link text-light" %>
+            </li>
+          </ul>
+          <ul class="navbar-nav m-2">
+            <li class="nav-item">
+              <%= link_to 'Logout', logout_path,{method:"post", class: "navbar-link text-light"} %>
+            </li>
+          <% end %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_205408) do
 
   create_table "filters", force: :cascade do |t|
     t.string "industry"
+    t.string "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
