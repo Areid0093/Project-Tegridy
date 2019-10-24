@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  resources :job_posting_filters
   root "home#index"
   resources :bookmarks
   resources :filters
   resources :job_applications
-  resources :job_postings, only: [:index, :show]
+  resources :job_postings
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :job_postings do
+    resources :job_applications, :except => [:index]
+  end
   get "signup", to: "users#new", as: "signup"
   get "login", to: "sessions#new", as: "login"
   post 'login', to: "sessions#create"

@@ -1,17 +1,12 @@
-<%= form_for @job_application do |f| %>
-    
-
+<%= form_tag("/job_postings/#{@job_posting_id}/job_applications", method: :post) do %>
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-  <%= f.collection_select :user_id, User.all, :id, :name %>
-  <%= f.collection_select :job_posting_id, JobPosting.all, :id, :company %>
-  <%= f.label :Status %>
-    <%= f.text_field :status %>
-
+    <%= label_tag :description %>
+    <%= text_field_tag :description %>
+    <%= hidden_field_tag :user_id, :value => current_user.id %>
+     <%# <%= f.collection_select :job_posting_id, JobPosting.all, :id, :company %> 
+    <%= hidden_field_tag :job_posting_id, :value => @job_posting_id%>
+</div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag "Send Application" %>
   </div>
 <% end %>
-

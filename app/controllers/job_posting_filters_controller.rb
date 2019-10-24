@@ -1,0 +1,2 @@
+class JobPostingFiltersController < ApplicationController
+end

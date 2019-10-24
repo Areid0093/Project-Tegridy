@@ -1,2 +1,4 @@
 
 *.cache
+*.pid
+tmp/cache/bootsnap-compile-cache/f3/af84578552b642
