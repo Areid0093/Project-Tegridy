@@ -1,0 +1,7 @@
+Your Bookmarks<br>
+<% @bookmarks.each do |bookmark| %>
+Company: <%= bookmark.job_posting.company%><br>
+Position: <%= bookmark.job_posting.position%><br>
+<%end%>
+
+<%= link_to 'Home', user_path(@user) %>

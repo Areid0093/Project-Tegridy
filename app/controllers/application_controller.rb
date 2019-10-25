@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user
-    helper_method :company
-   
+    helper_method :current_user   
 
   def current_user
     if session[:user_id]
@@ -12,10 +10,6 @@ class ApplicationController < ActionController::Base
     
   end 
 
-  def company 
-    @company = JobPosting.find_by_company(params[:company])
-  end
-  
 end
 
 

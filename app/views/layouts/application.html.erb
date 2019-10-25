@@ -2,14 +2,24 @@
 <html>
   <head>
     <title>Tegridy</title>
+    <%= tag.html do %>
+  <%= tag.head do %>
+    <%= tag.title 'RansackDemo' %>
+    <%= stylesheet_link_tag 'application', media: "all", "data-turbolinks-track" => "reload" %>
+    <%= javascript_include_tag 'application', "data-turbolinks-track" => "reload" %>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <script type="text/javascript">
+      $(function() {
+        <%= yield :document_ready %>
+      });
+    </script>
+  <% end %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  
 
-  <body>
     <%= yield %>
-  </body>
-</html>
+
+  
+ 
+<% end %>
+
