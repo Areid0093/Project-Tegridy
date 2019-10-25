@@ -47,10 +47,10 @@
     <%= form.password_field :password_confirmation, class: "form-control", required: true %>
   </div>
   <div class="col-md-5 .ml-auto">
-    <%= form.submit "Create Account" %>
+    <%= form.submit "Create Account", class:"btn btn-info" %>
   </div>
 </div>
       <% else %>
-    <%= form.submit "Update"%>
+    <%= form.submit "Update", class:"btn btn-info"%>
   <% end %>
 <% end %>

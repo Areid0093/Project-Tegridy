@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-sm-6">
-    <div class="card text-white bg-dark">
+    <div class="card text-black bg-light">
         <div class="card-body">
 <h2> <%= @job_posting.position%> at <%= @job_posting.company %> </h2>
 <h4>  City: <%= @job_posting.city %> </h4>
 <h4>  Description: <%= @job_posting.description%> </h4> <br>
-<%= link_to 'Apply Now', new_job_posting_job_application_path(@job_posting), class:"btn btn-info"%>
-<%= link_to 'Save', new_job_posting_bookmark_path(@job_posting)%>
+<%= link_to 'Apply Now', new_job_posting_job_application_path(@job_posting), class:"btn btn-info"%><br><br>
+<%= link_to 'Save', new_job_posting_bookmark_path(@job_posting), class:"btn btn-info"%>
 
             </div>
         </div>

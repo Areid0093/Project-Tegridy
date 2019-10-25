@@ -1,8 +1,17 @@
 <h1>My Applications: </h1>
 <% @job_applications.each do |job_application| %> <br>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-black bg-light">
+        <div class="card-body">
 Description: <%= job_application.description%><br>
 Company: <%= job_application.job_posting.company%><br>
 Position: <%= job_application.job_posting.position%><br>
-<%= link_to "Review Position", job_posting_path(job_application)%>
+<%= link_to "Review Position", job_posting_path(job_application), class:"btn btn-info"%>
+        </div>
+    </div>
+</div>
+</div>
+
 <%end%><br>
 

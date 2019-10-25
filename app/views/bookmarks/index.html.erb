@@ -1,7 +1,15 @@
-Your Bookmarks<br>
+<h1>My Bookmarks:</h1><br>
 <% @bookmarks.each do |bookmark| %>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-black bg-light">
+        <div class="card-body">
 Company: <%= bookmark.job_posting.company%><br>
 Position: <%= bookmark.job_posting.position%><br>
+Description: <%= bookmark.job_posting.description%><br>
+            </div>
+        </div>
+    </div>
+</div>
 <%end%>
 
-<%= link_to 'Home', user_path(@user) %>
