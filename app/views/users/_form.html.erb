@@ -47,7 +47,8 @@
     <%= form.password_field :password_confirmation, class: "form-control", required: true %>
   </div>
   <div class="col-md-5 .ml-auto">
-    <%= form.submit "Create Account", class:"btn btn-info" %>
+    <%= form.submit "Create Account", class:"btn btn-info" %><br><br>
+    <%= link_to 'Back', root_url, class:"btn btn-info" %>
   </div>
 </div>
       <% else %>
