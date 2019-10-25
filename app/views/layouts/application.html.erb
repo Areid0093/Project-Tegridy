@@ -2,7 +2,21 @@
 <html>
   <head>
     <title>Tegridy</title>
+    <%= tag.html do %>
+  <%= tag.head do %>
+    <%= tag.title 'RansackDemo' %>
+    <%= stylesheet_link_tag 'application', media: "all", "data-turbolinks-track" => "reload" %>
+    <%= javascript_include_tag 'application', "data-turbolinks-track" => "reload" %>
     <%= csrf_meta_tags %>
+    <script type="text/javascript">
+      $(function() {
+        <%= yield :document_ready %>
+      });
+    </script>
+  <% end %>
+
+  
+
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -42,5 +56,8 @@
       </div>
     </nav>
     <%= yield %>
-  </body>
-</html>
+
+  
+ 
+<% end %>
+
