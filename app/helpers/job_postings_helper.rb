@@ -33,9 +33,9 @@ module JobPostingsHelper
           14
         end
       
-        def user_city_header_labels
-          %w(1 2 3).freeze
-        end
+        # def user_city_header_labels
+        #   %w(1 2 3).freeze
+        # end
       
         def job_posting_users
           %w(users).freeze
@@ -86,10 +86,9 @@ module JobPostingsHelper
       
         def display_search_results_row(object)
           job_posting_column_fields.reduce(String.new) do |string, field|
-            string << (tag.td object.send(field))
+            string << (tag.td link_to(object.send(field), job_postings_path))
           end
-          .html_safe +
-          display_(object.users)
+          .html_safe 
         end
       
         def display_(users)
