@@ -1,6 +1,6 @@
 
-<%= tag.h2 display_results_header(@job_postings.size) %>
+<%= tag.h2 display_results_header(@job_posting.size) %>
 <%= tag.table do %>
   <%= tag.thead display_sort_column_headers(@search), escape_attributes: false %>
-  <%= tag.tbody display_search_results(@job_postings), escape_attributes: false%>
+  <%= tag.tbody display_search_results(@job_posting), escape_attributes: false%>
 <% end %>

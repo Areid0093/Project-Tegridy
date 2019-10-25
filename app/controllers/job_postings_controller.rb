@@ -14,7 +14,7 @@ class JobPostingsController < ApplicationController
     def advanced_search
         @search = ransack_params
         @search.build_grouping unless @search.groupings.any?
-        @job_postings  = ransack_result
+        @job_posting  = ransack_result
       end
     
     

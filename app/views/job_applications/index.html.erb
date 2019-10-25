@@ -1,8 +1,8 @@
 <h1>My Applications: </h1>
 <% @job_applications.each do |job_application| %> <br>
-Description: <%= job_application.description%><br>
 Company: <%= job_application.job_posting.company%><br>
 Position: <%= job_application.job_posting.position%><br>
+Your Saved Description: <%= job_application.description%><br>
 <%= link_to "Review Position", job_posting_path(job_application)%>
 <%end%><br>
 

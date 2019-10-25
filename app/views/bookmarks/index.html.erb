@@ -2,6 +2,7 @@ Your Bookmarks<br>
 <% @bookmarks.each do |bookmark| %>
 Company: <%= bookmark.job_posting.company%><br>
 Position: <%= bookmark.job_posting.position%><br>
+ <%= link_to "Delete", bookmark, method: :delete, data: { confirm: "Are you sure you want to delete?" } %><br>
 <%end%>
 
 <%= link_to 'Home', user_path(@user) %>

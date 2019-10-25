@@ -1,5 +1,6 @@
 <%= form_tag("/job_postings/#{@job_posting_id}/job_applications", method: :post) do %>
   <div class="field">
+    Give us a brief description about why we should hire you:<br>
     <%= label_tag :description %>
     <%= text_field_tag :description %>
     <%= hidden_field_tag :user_id, :value => current_user.id %>

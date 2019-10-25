@@ -86,7 +86,7 @@ module JobPostingsHelper
       
         def display_search_results_row(object)
           job_posting_column_fields.reduce(String.new) do |string, field|
-            string << (tag.td object.send(field))
+            string << (tag.td link_to(object.send(field), job_postings_path))
           end
           .html_safe +
           display_(object.users)
