@@ -2,17 +2,17 @@
 <h1>Login</h1>
 <%= form_tag sessions_path do |form| %>
   <div class="row">
-    <div class="col-md-5 .ml-auto">
+    <div class="col-md-9 .ml-auto">
     <%= label_tag :username %>
     <%= text_field :username, class: "form-control", required: true %>
   </div>
-   <div class="col-md-5 .ml-auto">
+   <div class="col-md-9 .ml-auto">
     <%= label_tag :password %>
     <%= password_field :password, class: "form-control", required: true %>
   </div>
-  <div class="col-md-5 .ml-auto">
-    <%= submit_tag "Login", class:"btn btn-dark" %><br>
-    <%= link_to 'Back', root_url, class:"btn btn-dark"  %>
+  <div class="col-md-9 .ml-auto">
+    <%= submit_tag "Login", class:"btn btn-md btn-info" %><br><br>
+    <%= link_to 'Back', root_url, class:"btn btn-info" %>
   </div>
 </div>
 <% end %>

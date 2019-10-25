@@ -39,10 +39,13 @@
           <% if logged_in? %>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item m-2 opac">
+              <%= link_to 'Job Postings', job_postings_path, class: "navbar-link text-light" %>
+            </li>
+            <li class="nav-item m-2 opac">
               <%= link_to 'My Applications', job_applications_path(signed_in), class: "navbar-link text-light" %>
             </li>
             <li class="nav-item m-2 opac">
-              <%= link_to 'Job Postings', job_postings_path, class: "navbar-link text-light" %>
+              <%= link_to 'My Bookmarks', bookmarks_path(signed_in), class: "navbar-link text-light" %>
             </li>
             <li class="nav-item m-2 opac">
               <%= link_to 'Profile', edit_user_path(signed_in), class: "navbar-link text-light" %>
