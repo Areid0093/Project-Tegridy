@@ -8,5 +8,7 @@
 
 <%= link_to 'Edit Profile', edit_user_path(@user) %> |                         
 <%= link_to 'Job Postings', job_postings_url%> |
+<%= link_to 'View My Bookmarks', bookmarks_path(@bookmarks) %>
 <%= link_to 'View My Applications', job_applications_path(@job_applications) %> |
 <%= link_to "Log Out", logout_path %>
+<%= link_to "Advanced Search", advanced_search_job_postings_path %>

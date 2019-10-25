@@ -2,5 +2,5 @@
 *.cache
 *.pid
 tmp/cache/bootsnap-compile-cache/f3/af84578552b642
-tmp/cache/bootsnap-compile-cache/f3/af84578552b642
-tmp/cache/bootsnap-load-path-cache
+node_modules
+node_modules

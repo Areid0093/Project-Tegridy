@@ -1,2 +1,11 @@
+<%= form_tag("/job_postings/#{@job_posting_id}/bookmarks", method: :post) do %>
+  <div class="field">
+    <%= hidden_field_tag :user_id, :value => current_user.id %>
+    <%= hidden_field_tag :job_posting_id, :value => @job_posting_id%>
+</div>
+  <div class="actions">
+    <%= submit_tag "Save Bookmark" %>
+  </div>
+<% end %>
 
 
