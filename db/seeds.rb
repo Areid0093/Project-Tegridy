@@ -33,20 +33,8 @@ end
         description: Faker::Company.bs) 
 end
 
-# 10.times do 
-#     Filter.create(
-#         industry: Faker::Company.industry,
-#         position: Faker::Job.title)
-# end
-
-
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 1)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 2)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 3)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 4)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 5)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 6)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 7)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 8)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 9)
-# JobApplication.create(status: 'open', description: Faker::Company.bs, job_posting_id: 10)
+10.times do 
+    Filter.create(
+        industry: Faker::Company.industry,
+        position: Faker::Job.title)
+end

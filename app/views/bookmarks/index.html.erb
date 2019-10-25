@@ -1,0 +1,16 @@
+<h1>My Bookmarks:</h1><br>
+<% @bookmarks.each do |bookmark| %>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-black bg-light">
+        <div class="card-body">
+<h5>Company: <%= bookmark.job_posting.company%></h5>
+<h5>Position: <%= bookmark.job_posting.position%></h5>
+<h6>Description: <%= bookmark.job_posting.description%></h6>
+<%= link_to "Delete", bookmark, method: :delete, data: { confirm: "Are you sure you want to delete?" }, class:"btn btn-info" %><br>
+          </div>
+        </div>
+    </div>
+</div>
+<%end%>
+

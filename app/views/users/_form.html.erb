@@ -10,38 +10,48 @@
       </ul>
     </div>
   <% end %>
- <div class="field">
+
+  <div class="row">
+    <div class="col-md-5 .ml-auto">
     <%= form.label :name %>
-    <%= form.text_field :name %>
-</div>
+    <%= form.text_field :name, class: "form-control", required: true %>
+ </div>
 
-  <div class="field">
-    <%= form.label :job_title %>
-    <%= form.text_field :job_title %>
-  </div>
-
-    <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-
-  <div class="field">
+  <div class="col-md-5 .ml-auto">
     <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form.text_field :username, class: "form-control", required: true %>
   </div>
 
-  <div class="field">
+  <div class="col-md-5 .ml-auto">
+    <%= form.label :city %>
+    <%= form.text_field :city, class: "form-control", required: true %>
+  </div>
+
+  <div class="col-md-5 .ml-auto">
+    <%= form.label :job_title %>
+    <%= form.text_field :job_title, class: "form-control", required: true %>
+  </div>
+
+</div>
+  <% if user.id.nil? %>
+
+<div class="row">
+  <div class="col-md-5 .ml-auto">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, class: "form-control", required: true %>
   </div>
 
-  <div class="field">
+ 
+  <div class="col-md-5 .ml-auto">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: "form-control", required: true %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="col-md-5 .ml-auto">
+    <%= form.submit "Create Account", class:"btn btn-info" %><br><br>
+    <%= link_to 'Back', root_url, class:"btn btn-info" %>
   </div>
+</div>
+      <% else %>
+    <%= form.submit "Update", class:"btn btn-info"%>
+  <% end %>
 <% end %>

@@ -1,8 +1,17 @@
-Your Applications<br>
-<% @job_applications.each do |job_application| %>
-Description: <%= job_application.description%><br>
-Company: <%= job_application.job_posting.company%><br>
-Position: <%= job_application.job_posting.position%><br>
-<%end%>
+<h1>My Applications: </h1>
+<% @job_applications.each do |job_application| %> <br>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-black bg-light">
+        <div class="card-body">
+<h5>Company: <%= job_application.job_posting.company%></h5>
+<h5>Position: <%= job_application.job_posting.position%></h5>
+<h6>Your Saved Description: <%= job_application.description%></h6>
+<%= link_to "Review Position", job_posting_path(job_application), class:"btn btn-info"%>
+        </div>
+    </div>
+</div>
+</div>
 
-<%= link_to 'Home', user_path(@user) %>
+<%end%><br>
+
