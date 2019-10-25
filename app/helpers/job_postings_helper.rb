@@ -25,7 +25,7 @@ module JobPostingsHelper
       
         def results_limit
           # max number of search results to display
-          10
+          25
         end
       
         def user_city_length
