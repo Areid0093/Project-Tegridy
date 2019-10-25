@@ -1,24 +1,21 @@
-# README
+# Tegridy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tegridy is a job board application being developed in order to facilitate the needs of job-seekers. The Tegridy home page provides users with the option to either sign up and create a new account, or log in with a previously created account. Tegridy provides the ability to search through and filter a variety of job postings. Furthermore,Tegridy will allow users to apply directly to a job posting, or save any given job post that can be returned to later in the bookmarks tab.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Please be sure to run the following command before attempting to use Tegridy:
 
-* System dependencies
+'bundle install'
 
-* Configuration
+### Usage
 
-* Database creation
+After running bundle install, be sure to run 'rails s' or 'rails server -p [insert port# here, (i.e. 3001)]'
 
-* Database initialization
+Open the webpage 'localhost:3000' or 'localhost:####' for the port you defined.
 
-* How to run the test suite
+#### Authors
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Made with Tegridy by:
+Alec Reid
+Angel Alaniz

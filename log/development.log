@@ -3466,3 +3466,157 @@ Processing by JobPostingsController#advanced_search as HTML
 Completed 200 OK in 246ms (Views: 239.1ms | ActiveRecord: 3.1ms | Allocations: 67976)
 
 
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20191021182411)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password_digest" varchar, "city" varchar, "job_title" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021182411"]]
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJobPostings (20191021182803)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "job_postings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "company" varchar, "position" varchar, "city" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021182803"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJobApplications (20191021183000)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "status" varchar, "description" text, "user_id" integer, "job_posting_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021183000"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateFilters (20191021183133)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "filters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "industry" varchar, "position" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021183133"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBookmarks (20191021183206)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "job_posting_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191021183206"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJobPostingFilters (20191023205408)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "job_posting_filters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "job_posting_id" integer, "filter_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191023205408"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-25 18:21:27.306309"], ["updated_at", "2019-10-25 18:21:27.306309"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications"[0m
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "leandavis123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lean Davis"], ["username", "leandavis123"], ["password_digest", "$2a$12$gQT7N2E0I.Bgb2V7ckY01etoUObofnKI29dt5Xgk3PsY16xQ0DwI2"], ["city", "Lake Lynn"], ["job_title", "Education Officer"], ["created_at", "2019-10-25 18:22:31.143774"], ["updated_at", "2019-10-25 18:22:31.143774"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "randyemmerich123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Randy Emmerich"], ["username", "randyemmerich123"], ["password_digest", "$2a$12$gKevzbsWU7F5wsEp5T.pi.ANzV5pXDKgdNBhcbq1ep.yVg4WI4eT6"], ["city", "East Nadabury"], ["job_title", "Farming Associate"], ["created_at", "2019-10-25 18:22:31.453840"], ["updated_at", "2019-10-25 18:22:31.453840"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "christopherparisianmd123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Christopher Parisian MD"], ["username", "christopherparisianmd123"], ["password_digest", "$2a$12$ijMGsTAKwNwuiHs267TnOeeQPl6R2SswVDd34piKwScrg7NEvw2O2"], ["city", "Lake Hoaside"], ["job_title", "Direct Designer"], ["created_at", "2019-10-25 18:22:31.814211"], ["updated_at", "2019-10-25 18:22:31.814211"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "robertapollich123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Roberta Pollich"], ["username", "robertapollich123"], ["password_digest", "$2a$12$xCBBvvP7aLS4jOMer0ZdMuCWcfK10SNn12bJycU06GyDovFWvo3Ki"], ["city", "West Diedramouth"], ["job_title", "Future Specialist"], ["created_at", "2019-10-25 18:22:32.134457"], ["updated_at", "2019-10-25 18:22:32.134457"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "kailaroob123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kaila Roob"], ["username", "kailaroob123"], ["password_digest", "$2a$12$w6hPiwqQZuHq5b35pF4KROBF3QFiy7Y6Ou.vxF3mkgS1dCzFnxwlG"], ["city", "Dagnyville"], ["job_title", "Lead Planner"], ["created_at", "2019-10-25 18:22:32.446117"], ["updated_at", "2019-10-25 18:22:32.446117"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "nellao'conner123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nella O'Conner"], ["username", "nellao'conner123"], ["password_digest", "$2a$12$Niok5OWiwxXjPK7LhU00seLocLuAzXJtDTJeWmS8CTnv7WHQDqeUi"], ["city", "North Blondellside"], ["job_title", "Customer Retail Manager"], ["created_at", "2019-10-25 18:22:32.754451"], ["updated_at", "2019-10-25 18:22:32.754451"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jeremycaspermd123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jeremy Casper MD"], ["username", "jeremycaspermd123"], ["password_digest", "$2a$12$qQMi4emmR57ckpp69KcyAuojkxSybZrJTlkfT3x0s6mKs0gjM.6he"], ["city", "New Alvatown"], ["job_title", "Investor Consulting Facilitator"], ["created_at", "2019-10-25 18:22:33.062801"], ["updated_at", "2019-10-25 18:22:33.062801"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "nathanielturner123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Nathaniel Turner"], ["username", "nathanielturner123"], ["password_digest", "$2a$12$JW5CMwstwtvwVFUlGbFWFeLqklQJ5fOgkas6xOB2kv7coSKmmblUy"], ["city", "O'Connellmouth"], ["job_title", "Marketing Representative"], ["created_at", "2019-10-25 18:22:33.371677"], ["updated_at", "2019-10-25 18:22:33.371677"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jenagerholdiv123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jena Gerhold IV"], ["username", "jenagerholdiv123"], ["password_digest", "$2a$12$gBwjPkk.4dcYvxKO3e/8LexjFHienjXE71hCwVumCIyG1Jp5gWiFW"], ["city", "Handmouth"], ["job_title", "District Consultant"], ["created_at", "2019-10-25 18:22:33.680312"], ["updated_at", "2019-10-25 18:22:33.680312"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ms.thadgrant123"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "city", "job_title", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ms. Thad Grant"], ["username", "ms.thadgrant123"], ["password_digest", "$2a$12$RN7k2sPEdayAsouQHuc8t.qO4vrid9Gl8zpdtxo1Zdr8cb2Z3NO/."], ["city", "Darrellberg"], ["job_title", "Global Facilitator"], ["created_at", "2019-10-25 18:22:33.989375"], ["updated_at", "2019-10-25 18:22:33.989375"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Blick, Moore and Wyman"], ["position", "Lead Healthcare Specialist"], ["city", "Bulaview"], ["description", "syndicate enterprise solutions"], ["created_at", "2019-10-25 18:22:34.015839"], ["updated_at", "2019-10-25 18:22:34.015839"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Wehner, Rodriguez and Baumbach"], ["position", "Consulting Orchestrator"], ["city", "Pfefferstad"], ["description", "generate magnetic portals"], ["created_at", "2019-10-25 18:22:34.022386"], ["updated_at", "2019-10-25 18:22:34.022386"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Rodriguez and Sons"], ["position", "Hospitality Orchestrator"], ["city", "Damianland"], ["description", "evolve back-end e-business"], ["created_at", "2019-10-25 18:22:34.028666"], ["updated_at", "2019-10-25 18:22:34.028666"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Nolan-Jakubowski"], ["position", "Manufacturing Orchestrator"], ["city", "South David"], ["description", "reintermediate visionary eyeballs"], ["created_at", "2019-10-25 18:22:34.035055"], ["updated_at", "2019-10-25 18:22:34.035055"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Bernier and Sons"], ["position", "National Construction Executive"], ["city", "Emmerichton"], ["description", "drive proactive e-services"], ["created_at", "2019-10-25 18:22:34.041300"], ["updated_at", "2019-10-25 18:22:34.041300"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.5ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Kohler-Casper"], ["position", "Government Engineer"], ["city", "Port Shavonhaven"], ["description", "syndicate back-end eyeballs"], ["created_at", "2019-10-25 18:22:34.047721"], ["updated_at", "2019-10-25 18:22:34.047721"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.7ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Huels and Sons"], ["position", "Farming Liaison"], ["city", "North Wesleyville"], ["description", "streamline B2C ROI"], ["created_at", "2019-10-25 18:22:34.082203"], ["updated_at", "2019-10-25 18:22:34.082203"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.5ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Labadie-Gutkowski"], ["position", "National Construction Facilitator"], ["city", "Hudsonhaven"], ["description", "disintermediate web-enabled web-readiness"], ["created_at", "2019-10-25 18:22:34.089787"], ["updated_at", "2019-10-25 18:22:34.089787"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.5ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Cassin Inc"], ["position", "Marketing Liaison"], ["city", "Haroldview"], ["description", "harness dynamic partnerships"], ["created_at", "2019-10-25 18:22:34.096708"], ["updated_at", "2019-10-25 18:22:34.096708"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.5ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Prosacco and Sons"], ["position", "Chief Strategist"], ["city", "Sammieport"], ["description", "streamline back-end technologies"], ["created_at", "2019-10-25 18:22:34.104252"], ["updated_at", "2019-10-25 18:22:34.104252"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.7ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Gaylord Group"], ["position", "International Hospitality Planner"], ["city", "North Patborough"], ["description", "disintermediate impactful web services"], ["created_at", "2019-10-25 18:22:34.112661"], ["updated_at", "2019-10-25 18:22:34.112661"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.6ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Steuber Group"], ["position", "Central Design Architect"], ["city", "Ervinton"], ["description", "incentivize distributed content"], ["created_at", "2019-10-25 18:22:34.121909"], ["updated_at", "2019-10-25 18:22:34.121909"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.6ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Wiza, Williamson and McDermott"], ["position", "Education Administrator"], ["city", "Gradyburgh"], ["description", "target clicks-and-mortar e-commerce"], ["created_at", "2019-10-25 18:22:34.130292"], ["updated_at", "2019-10-25 18:22:34.130292"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.6ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Greenholt, Prohaska and Luettgen"], ["position", "Real-Estate Designer"], ["city", "Beattystad"], ["description", "orchestrate synergistic platforms"], ["created_at", "2019-10-25 18:22:34.139490"], ["updated_at", "2019-10-25 18:22:34.139490"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.5ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Stracke Inc"], ["position", "Senior Construction Producer"], ["city", "Port Asuncionfort"], ["description", "recontextualize 24/365 partnerships"], ["created_at", "2019-10-25 18:22:34.147800"], ["updated_at", "2019-10-25 18:22:34.147800"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.5ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Konopelski-Braun"], ["position", "Farming Coordinator"], ["city", "New Sandy"], ["description", "exploit magnetic solutions"], ["created_at", "2019-10-25 18:22:34.154586"], ["updated_at", "2019-10-25 18:22:34.154586"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Runolfsson, Bruen and Kilback"], ["position", "Real-Estate Executive"], ["city", "Changhaven"], ["description", "deploy world-class technologies"], ["created_at", "2019-10-25 18:22:34.161498"], ["updated_at", "2019-10-25 18:22:34.161498"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.7ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Wiza and Sons"], ["position", "District Healthcare Engineer"], ["city", "Jereburgh"], ["description", "utilize strategic networks"], ["created_at", "2019-10-25 18:22:34.167950"], ["updated_at", "2019-10-25 18:22:34.167950"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "Sauer-Runolfsson"], ["position", "Senior Agent"], ["city", "West Racquelmouth"], ["description", "strategize visionary users"], ["created_at", "2019-10-25 18:22:34.176734"], ["updated_at", "2019-10-25 18:22:34.176734"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobPosting Create (0.4ms)[0m  [1m[32mINSERT INTO "job_postings" ("company", "position", "city", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["company", "McGlynn LLC"], ["position", "IT Director"], ["city", "North Barryberg"], ["description", "strategize one-to-one experiences"], ["created_at", "2019-10-25 18:22:34.183198"], ["updated_at", "2019-10-25 18:22:34.183198"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
