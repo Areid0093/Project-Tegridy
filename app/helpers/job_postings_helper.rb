@@ -9,7 +9,7 @@ module JobPostingsHelper
       
         def link_to_toggle_search_modes
           if action_name == 'advanced_search'
-            link_to('Go to Simple mode', job_postings_path)
+            link_to('Go to Job Postings', job_postings_path,)
           else
             link_to('Go to Advanced mode', advanced_search_job_postings_path)
           end

@@ -4,14 +4,11 @@
   <div class="col-sm-6">
     <div class="card text-black bg-light">
         <div class="card-body">
-Company: <%= bookmark.job_posting.company%><br>
-Position: <%= bookmark.job_posting.position%><br>
- <%= link_to "Delete", bookmark, method: :delete, data: { confirm: "Are you sure you want to delete?" } %><br>
-<%end%>
-
-<%= link_to 'Home', user_path(@user) %>
-Description: <%= bookmark.job_posting.description%><br>
-            </div>
+<h5>Company: <%= bookmark.job_posting.company%></h5>
+<h5>Position: <%= bookmark.job_posting.position%></h5>
+<h6>Description: <%= bookmark.job_posting.description%></h6>
+<%= link_to "Delete", bookmark, method: :delete, data: { confirm: "Are you sure you want to delete?" }, class:"btn btn-info" %><br>
+          </div>
         </div>
     </div>
 </div>
