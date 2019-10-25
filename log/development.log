@@ -2557,3 +2557,540 @@ Processing by JobPostingsController#advanced_search as HTML
 Completed 200 OK in 166ms (Views: 162.8ms | ActiveRecord: 1.4ms | Allocations: 61052)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /Users/alecreid/Documents/GitHub/Project-Tegridy/config/environment.rb:5)
+Started GET "/job_postings/advanced_search" for ::1 at 2019-10-25 12:40:09 -0500
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by JobPostingsController#advanced_search as HTML
+  Rendering job_postings/advanced_search.html.erb within layouts/application
+  Rendered job_postings/_attribute_fields.html.erb (Duration: 45.5ms | Allocations: 12314)
+  Rendered job_postings/_value_fields.html.erb (Duration: 6.6ms | Allocations: 286)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.2ms | Allocations: 67)
+  Rendered job_postings/_condition_fields.html.erb (Duration: 69.1ms | Allocations: 16086)
+  Rendered job_postings/_grouping_fields.html.erb (Duration: 598.0ms | Allocations: 198628)
+  Rendered job_postings/_sort_fields.html.erb (Duration: 8.3ms | Allocations: 2840)
+  Rendered job_postings/_attribute_fields.html.erb (Duration: 13.3ms | Allocations: 5310)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.4ms | Allocations: 69)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.2ms | Allocations: 68)
+  Rendered job_postings/_condition_fields.html.erb (Duration: 20.1ms | Allocations: 7729)
+  Rendered job_postings/_grouping_fields.html.erb (Duration: 21.6ms | Allocations: 8101)
+  Rendered job_postings/_attribute_fields.html.erb (Duration: 44.2ms | Allocations: 5309)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.3ms | Allocations: 68)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.3ms | Allocations: 67)
+  Rendered job_postings/_condition_fields.html.erb (Duration: 51.4ms | Allocations: 7724)
+  Rendered job_postings/_grouping_fields.html.erb (Duration: 53.1ms | Allocations: 8096)
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_postings"[0m
+  ↳ app/views/job_postings/_results.html.erb:2
+  [1m[36mJobPosting Load (0.7ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/helpers/job_postings_helper.rb:82:in `reduce'
+  [1m[36mJobApplication Load (2.8ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."job_posting_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["job_posting_id", 1], ["job_posting_id", 2], ["job_posting_id", 3], ["job_posting_id", 4], ["job_posting_id", 5], ["job_posting_id", 6], ["job_posting_id", 7], ["job_posting_id", 8], ["job_posting_id", 9], ["job_posting_id", 10]]
+  ↳ app/helpers/job_postings_helper.rb:82:in `reduce'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  ↳ app/helpers/job_postings_helper.rb:82:in `reduce'
+  Rendered job_postings/_results.html.erb (Duration: 212.4ms | Allocations: 27398)
+  Rendered job_postings/advanced_search.html.erb within layouts/application (Duration: 915.4ms | Allocations: 250529)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 3294ms (Views: 3242.1ms | ActiveRecord: 13.5ms | Allocations: 1631231)
+
+
+Started GET "/job_postings" for ::1 at 2019-10-25 12:40:20 -0500
+Processing by JobPostingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:5:in `index'
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:5
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2059)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 66ms (Views: 60.6ms | ActiveRecord: 0.6ms | Allocations: 23964)
+
+
+Started GET "/job_postings/1" for ::1 at 2019-10-25 12:40:22 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:10:in `show'
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:11:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 313)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 59ms (Views: 50.3ms | ActiveRecord: 0.6ms | Allocations: 22734)
+
+
+Started GET "/job_postings/1/job_applications/new" for ::1 at 2019-10-25 12:40:23 -0500
+Processing by JobApplicationsController#new as HTML
+  Parameters: {"job_posting_id"=>"1"}
+  Rendering job_applications/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered job_applications/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 988)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 90ms (Views: 87.4ms | ActiveRecord: 0.5ms | Allocations: 22823)
+
+
+Started POST "/job_postings/1/job_applications" for ::1 at 2019-10-25 12:40:27 -0500
+Processing by JobApplicationsController#create as HTML
+  Parameters: {"authenticity_token"=>"TuerbOpINyPOvx2XEU/hICk4+I/TqXII59vCessIBVFg/0Fupvqn9FIQYAtskH8hlgE/PGvI4nF/AeQCRCWRVQ==", "description"=>"I'm retarded", "user_id"=>"{:value=>11}", "job_posting_id"=>"1", "commit"=>"Send Application"}
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:32:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+Completed 422 Unprocessable Entity in 21ms (ActiveRecord: 1.0ms | Allocations: 5258)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Description is too short (minimum is 20 characters)):
+  
+app/controllers/job_applications_controller.rb:34:in `create'
+Started GET "/users/Alec123/edit" for ::1 at 2019-10-25 12:42:18 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"Alec123"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 14.2ms | Allocations: 2032)
+  Rendered users/edit.html.erb within layouts/application (Duration: 17.8ms | Allocations: 2362)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 0.3ms | Allocations: 24608)
+
+
+Started GET "/job_applications.Alec123" for ::1 at 2019-10-25 12:48:59 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobApplicationsController#index as 
+  Rendering job_applications/index.html.erb within layouts/application
+  [1m[36mJobApplication Load (2.6ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE (user_id = 11)[0m
+  ↳ app/views/job_applications/index.html.erb:2
+  [1m[36mJobPosting Load (2.8ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/index.html.erb:7
+  Rendered job_applications/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 1733)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 89ms (Views: 77.7ms | ActiveRecord: 8.5ms | Allocations: 24470)
+
+
+Started GET "/job_postings/advanced_search.Alec123" for ::1 at 2019-10-25 12:49:01 -0500
+Processing by JobPostingsController#advanced_search as 
+  Rendering job_postings/advanced_search.html.erb within layouts/application
+  Rendered job_postings/_attribute_fields.html.erb (Duration: 12.6ms | Allocations: 5411)
+  Rendered job_postings/_value_fields.html.erb (Duration: 3.0ms | Allocations: 166)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.3ms | Allocations: 67)
+  Rendered job_postings/_condition_fields.html.erb (Duration: 26.6ms | Allocations: 8558)
+  Rendered job_postings/_grouping_fields.html.erb (Duration: 31.7ms | Allocations: 9401)
+  Rendered job_postings/_sort_fields.html.erb (Duration: 10.6ms | Allocations: 2822)
+  Rendered job_postings/_attribute_fields.html.erb (Duration: 11.0ms | Allocations: 5310)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.2ms | Allocations: 68)
+  Rendered job_postings/_condition_fields.html.erb (Duration: 14.5ms | Allocations: 7729)
+  Rendered job_postings/_grouping_fields.html.erb (Duration: 15.3ms | Allocations: 8101)
+  Rendered job_postings/_attribute_fields.html.erb (Duration: 14.6ms | Allocations: 5309)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.2ms | Allocations: 68)
+  Rendered job_postings/_value_fields.html.erb (Duration: 0.1ms | Allocations: 67)
+  Rendered job_postings/_condition_fields.html.erb (Duration: 18.8ms | Allocations: 7724)
+  Rendered job_postings/_grouping_fields.html.erb (Duration: 20.0ms | Allocations: 8096)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_postings"[0m
+  ↳ app/views/job_postings/_results.html.erb:2
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" LIMIT ?[0m  [["LIMIT", 10]]
+  ↳ app/helpers/job_postings_helper.rb:82:in `reduce'
+  [1m[36mJobApplication Load (0.4ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."job_posting_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["job_posting_id", 1], ["job_posting_id", 2], ["job_posting_id", 3], ["job_posting_id", 4], ["job_posting_id", 5], ["job_posting_id", 6], ["job_posting_id", 7], ["job_posting_id", 8], ["job_posting_id", 9], ["job_posting_id", 10]]
+  ↳ app/helpers/job_postings_helper.rb:82:in `reduce'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  ↳ app/helpers/job_postings_helper.rb:82:in `reduce'
+  Rendered job_postings/_results.html.erb (Duration: 32.7ms | Allocations: 8966)
+  Rendered job_postings/advanced_search.html.erb within layouts/application (Duration: 124.7ms | Allocations: 42439)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 170ms (Views: 165.4ms | ActiveRecord: 1.6ms | Allocations: 64387)
+
+
+Started GET "/job_postings.Alec123" for ::1 at 2019-10-25 12:49:03 -0500
+Processing by JobPostingsController#index as 
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:5:in `index'
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (1.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:5
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2037)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 48ms (Views: 43.0ms | ActiveRecord: 1.6ms | Allocations: 23852)
+
+
+Started GET "/job_postings/1" for ::1 at 2019-10-25 12:49:04 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:10:in `show'
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:11:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 300)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 70ms (Views: 62.5ms | ActiveRecord: 0.9ms | Allocations: 22586)
+
+
+Started GET "/job_postings/1/job_applications/new" for ::1 at 2019-10-25 12:49:06 -0500
+Processing by JobApplicationsController#new as HTML
+  Parameters: {"job_posting_id"=>"1"}
+  Rendering job_applications/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered job_applications/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1098)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 0.5ms | Allocations: 22445)
+
+
+Started POST "/job_postings/1/job_applications" for ::1 at 2019-10-25 12:49:08 -0500
+Processing by JobApplicationsController#create as HTML
+  Parameters: {"authenticity_token"=>"DCCP+RRoCBEq4ySA8AtvHCgH6585YaS4kXhVD8ZQzJciOGX7WNqYxrZMWRyN1PEdlz4sLIEANMEJonN3SX1Ykw==", "description"=>"123", "user_id"=>"{:value=>11}", "job_posting_id"=>"1", "commit"=>"Send Application"}
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:32:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+Completed 422 Unprocessable Entity in 18ms (ActiveRecord: 0.9ms | Allocations: 4513)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Description is too short (minimum is 20 characters)):
+  
+app/controllers/job_applications_controller.rb:34:in `create'
+Started POST "/job_postings/1/job_applications" for ::1 at 2019-10-25 12:50:19 -0500
+Processing by JobApplicationsController#create as HTML
+  Parameters: {"authenticity_token"=>"DCCP+RRoCBEq4ySA8AtvHCgH6585YaS4kXhVD8ZQzJciOGX7WNqYxrZMWRyN1PEdlz4sLIEANMEJonN3SX1Ykw==", "description"=>"sdklghsghsdofjklsflksdjfdkslfjkldsfjlsjfkfjlsfs", "user_id"=>"{:value=>11}", "job_posting_id"=>"1", "commit"=>"Send Application"}
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:32:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[36mJobApplication Create (3.1ms)[0m  [1m[32mINSERT INTO "job_applications" ("status", "description", "user_id", "job_posting_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["status", "started"], ["description", "sdklghsghsdofjklsflksdjfdkslfjkldsfjlsjfkfjlsfs"], ["user_id", 11], ["job_posting_id", 1], ["created_at", "2019-10-25 17:50:19.210213"], ["updated_at", "2019-10-25 17:50:19.210213"]]
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+Redirected to http://localhost:3001/job_applications
+Completed 302 Found in 31ms (ActiveRecord: 12.8ms | Allocations: 4682)
+
+
+Started GET "/job_applications" for ::1 at 2019-10-25 12:50:19 -0500
+Processing by JobApplicationsController#index as HTML
+  Rendering job_applications/index.html.erb within layouts/application
+  [1m[36mJobApplication Load (0.4ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE (user_id = 11)[0m
+  ↳ app/views/job_applications/index.html.erb:2
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/index.html.erb:7
+  [1m[36mCACHE JobPosting Load (0.0ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/index.html.erb:7
+  Rendered job_applications/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2010)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 63ms (Views: 59.0ms | ActiveRecord: 1.2ms | Allocations: 23353)
+
+
+Started GET "/job_applications" for ::1 at 2019-10-25 12:53:09 -0500
+Processing by JobApplicationsController#index as HTML
+  Rendering job_applications/index.html.erb within layouts/application
+  [1m[36mJobApplication Load (0.4ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE (user_id = 11)[0m
+  ↳ app/views/job_applications/index.html.erb:2
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/index.html.erb:7
+  [1m[36mCACHE JobPosting Load (0.0ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_applications/index.html.erb:7
+  Rendered job_applications/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2206)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 88ms (Views: 85.5ms | ActiveRecord: 0.8ms | Allocations: 24863)
+
+
+Started GET "/job_postings.Alec123" for ::1 at 2019-10-25 12:53:10 -0500
+Processing by JobPostingsController#index as 
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:5:in `index'
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:5
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2018)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 86ms (Views: 82.9ms | ActiveRecord: 0.6ms | Allocations: 24297)
+
+
+Started GET "/job_postings/1" for ::1 at 2019-10-25 12:53:11 -0500
+Processing by JobPostingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:10:in `show'
+  [1m[36mJobPosting Load (0.2ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:11:in `show'
+  Rendering job_postings/show.html.erb within layouts/application
+  Rendered job_postings/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 305)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 60ms (Views: 52.7ms | ActiveRecord: 0.6ms | Allocations: 22586)
+
+
+Started GET "/job_postings/1/job_applications/new" for ::1 at 2019-10-25 12:53:13 -0500
+Processing by JobApplicationsController#new as HTML
+  Parameters: {"job_posting_id"=>"1"}
+  Rendering job_applications/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered job_applications/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1092)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 58ms (Views: 54.4ms | ActiveRecord: 0.4ms | Allocations: 22435)
+
+
+Started POST "/job_postings/1/job_applications" for ::1 at 2019-10-25 12:53:15 -0500
+Processing by JobApplicationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Yjd75QUexuvAldogC3GXkCa2m4Xj78OrWDd46pnBBnRML5HnSaxWPFw6p7x2rgmRmY9cNluOU9LA7V6SFuyScA==", "description"=>"1243456", "user_id"=>"{:value=>11}", "job_posting_id"=>"1", "commit"=>"Send Application"}
+  [1m[36mJobPosting Load (0.8ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:32:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+Completed 422 Unprocessable Entity in 15ms (ActiveRecord: 1.4ms | Allocations: 4498)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Description is too short (minimum is 20 characters)):
+  
+app/controllers/job_applications_controller.rb:34:in `create'
+Started GET "/job_postings/1/job_applications/new" for ::1 at 2019-10-25 12:54:19 -0500
+Processing by JobApplicationsController#new as HTML
+  Parameters: {"job_posting_id"=>"1"}
+  Rendering job_applications/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered job_applications/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1090)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 0.5ms | Allocations: 23707)
+
+
+Started POST "/job_postings/1/job_applications" for ::1 at 2019-10-25 12:54:22 -0500
+Processing by JobApplicationsController#create as HTML
+  Parameters: {"authenticity_token"=>"rGwOjKk17TcKYzOpPsgz/0jwpztkbFhZ1Lr8Z32eG+qCdOSO5Yd94JbMTjVDF63+98lgiNwNyCBMYNof8rOP7g==", "description"=>"cvd", "user_id"=>"{:value=>11}", "job_posting_id"=>"1", "commit"=>"Send Application"}
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:32:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+Completed 422 Unprocessable Entity in 18ms (ActiveRecord: 1.0ms | Allocations: 4498)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Description is too short (minimum is 20 characters)):
+  
+app/controllers/job_applications_controller.rb:34:in `create'
+Started GET "/job_postings/1/job_applications/new" for ::1 at 2019-10-25 12:57:35 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobApplicationsController#new as HTML
+  Parameters: {"job_posting_id"=>"1"}
+  Rendering job_applications/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `current_user'
+  Rendered job_applications/new.html.erb within layouts/application (Duration: 24.9ms | Allocations: 7901)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 96ms (Views: 73.2ms | ActiveRecord: 1.8ms | Allocations: 39361)
+
+
+Started POST "/job_postings/1/job_applications" for ::1 at 2019-10-25 12:57:37 -0500
+Processing by JobApplicationsController#create as HTML
+  Parameters: {"authenticity_token"=>"dCYwBYNSoT0gVIr45vO/hLiL3p5cADqAR41lc7qsHxxaPtoHz+Ax6rz792SbLCGFB7IZLeRhqvnfV0MLNYGLGA==", "description"=>"124253", "user_id"=>"{:value=>11}", "job_posting_id"=>"1", "commit"=>"Send Application"}
+  [1m[36mJobPosting Load (0.3ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings" WHERE "job_postings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:32:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/job_applications_controller.rb:34:in `create'
+Completed 422 Unprocessable Entity in 51ms (ActiveRecord: 1.8ms | Allocations: 13035)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Description is too short (minimum is 20 characters)):
+  
+app/controllers/job_applications_controller.rb:34:in `create'
+Started GET "/job_postings" for ::1 at 2019-10-25 12:58:44 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobPostingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/job_postings_controller.rb:5:in `index'
+  Rendering job_postings/index.html.erb within layouts/application
+  [1m[36mJobPosting Load (0.4ms)[0m  [1m[34mSELECT "job_postings".* FROM "job_postings"[0m
+  ↳ app/views/job_postings/index.html.erb:5
+  Rendered job_postings/index.html.erb within layouts/application (Duration: 29.2ms | Allocations: 6277)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `signed_in'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 159ms (Views: 114.5ms | ActiveRecord: 3.9ms | Allocations: 39352)
+
+
+Started GET "/logout" for ::1 at 2019-10-25 12:58:47 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3001/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/" for ::1 at 2019-10-25 12:58:47 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 212)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.2ms | Allocations: 21465)
+
+
+Started GET "/signup" for ::1 at 2019-10-25 12:58:49 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 11.0ms | Allocations: 2210)
+  Rendered users/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 2517)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 68ms (Views: 65.8ms | ActiveRecord: 0.2ms | Allocations: 23813)
+
+
+Started POST "/users" for ::1 at 2019-10-25 12:58:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"TMyV/tGIUthVtdPSCrw3Nx2oD7pRNV2MRGmWiDS8EiBi1H/8nTrCD8kark53Y6k2opHICelUzfXcs7Dwu5GGJA==", "user"=>{"name"=>"Alec", "username"=>"Alec1", "city"=>"1", "job_title"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Alec1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.1ms | Allocations: 1609)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1673)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 364ms (Views: 38.0ms | ActiveRecord: 0.6ms | Allocations: 25700)
+
+
+Started POST "/users" for ::1 at 2019-10-25 12:59:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"MwhGeE1ZJFZ02OeELH+/yAFLGRbHVHtvmyqVzEtzFWodEKx6Aeu0geh3mhhRoCHJvnLepX816xYD8LO0xF6Bbg==", "user"=>{"name"=>"Alec23456", "username"=>"Alec34567", "city"=>"1", "job_title"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Alec34567"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:27:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.2ms | Allocations: 1617)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1681)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `logged_in?'
+Completed 200 OK in 393ms (Views: 39.1ms | ActiveRecord: 2.0ms | Allocations: 33146)
+
+

@@ -15,7 +15,7 @@ class JobPostingsController < ApplicationController
         @search = ransack_params
         @search.build_grouping unless @search.groupings.any?
         @job_posting  = ransack_result
-      end
+    end
     
     
     private
